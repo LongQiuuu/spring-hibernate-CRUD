@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id='inFile' class='java.io.File'>
+		<constructor-arg value='data/SamplePictures.zip' />
+	</bean>
+
+	<bean id='outFile' class='java.io.File'>
+		<constructor-arg value='data/SamplePicturesZZ.zip' />
+	</bean>
+	
+	<!-- ref=一個物件透過建構子傳進去  value =傳遞一個字串資料 -->
+	<bean id='fis' class="java.io.FileInputStream">
+		<constructor-arg ref='inFile' />
+	</bean>
+
+	<bean id='fos' class="java.io.FileOutputStream">
+		<constructor-arg ref='outFile' />
+	</bean>
+
+</beans>
